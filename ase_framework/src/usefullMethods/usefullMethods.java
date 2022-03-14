@@ -2,8 +2,6 @@ package usefullMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.*;
-import org.testng.annotations.NoInjection;
-import org.testng.annotations.Test;
 
 import java.util.Random;
 
@@ -28,6 +26,11 @@ public class usefullMethods {
         waitTimer(2);
     }
 
+    public static void enterFirstName(WebDriver driver, String firstName) throws InterruptedException {
+        driver.findElement(By.cssSelector("input[id='firstname']")).sendKeys(firstName);
+        waitTimer(2);
+    }
+
     public static void enterLastName(WebDriver driver, String name) throws InterruptedException {
         driver.findElement(By.xpath("//input[@id=\"lastname\"]")).sendKeys(name);
         waitTimer(2);
@@ -44,23 +47,18 @@ public class usefullMethods {
     }
 
     public static void enterConfirmationPassword(WebDriver driver, String password) throws InterruptedException {
-        driver.findElement(By.xpath("//input[@id=\"password-confirmation\"]")).sendKeys(password);
-        waitTimer(2);
-    }
-
-    public static void enterFirstName(WebDriver driver, String firstName) throws InterruptedException {
-        driver.findElement(By.xpath("//input[@id=\"firstname\"]")).sendKeys(firstName);
+//        driver.findElement(By.xpath("//input[@id=\"password-confirmation\"]")).sendKeys(password);
+        driver.findElement(By.id("password-confirmation")).sendKeys(password);
         waitTimer(2);
     }
 
     public static void clickCreateAccount(WebDriver driver) throws InterruptedException {
-        driver.findElement(By.xpath("//button[@class=\"action submit primary\"]")).click();
+        driver.findElements(By.xpath("//button[@class=\"action submit primary\"]")).get(0).click();
         waitTimer(2);
     }
 
     public static void verifyUserOnCorrectPageUi(WebDriver driver, String xpath, String text){
         Assert.assertEquals(driver.findElement(By.xpath(xpath)).getText(), text);
-        System.out.println();
     }
 
     public static void verifyUserOnCorrectUrl(WebDriver driver, String url){
