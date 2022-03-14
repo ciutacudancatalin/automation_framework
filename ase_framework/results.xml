@@ -1,0 +1,7 @@
+<suite name="AccountSuite">
+    <test name="accountCreation">
+        <classes>
+            <class name="accountCreation.accountCreationSuite"/>
+        </classes>
+    </test>
+</suite>
