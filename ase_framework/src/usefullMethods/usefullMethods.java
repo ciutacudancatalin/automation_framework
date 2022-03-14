@@ -21,7 +21,7 @@ public class usefullMethods {
         Thread.sleep(waitTime*1000);
     }
 
-    public static void clickSignInButton(WebDriver driver) throws InterruptedException {
+    public static void clickCreateAccountButton(WebDriver driver) throws InterruptedException {
         driver.findElements(By.xpath("//a[text()=\"Create an Account\"]")).get(0).click();
         waitTimer(2);
     }

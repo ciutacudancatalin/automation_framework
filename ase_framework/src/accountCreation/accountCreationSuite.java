@@ -8,6 +8,7 @@ import static usefullMethods.usefullMethods.getRandomEmail;
 
 
 class accountCreationSuite {
+
     @Test
     private static void accountCreation() throws InterruptedException {
 
@@ -30,7 +31,7 @@ class accountCreationSuite {
         usefullMethods.waitTimer(2);
 
         //click on the sign in button
-        usefullObj.clickSignInButton(driver);
+        usefullObj.clickCreateAccountButton(driver);
 
         //verify User is on the correct page
         usefullObj.verifyUserOnCorrectUrl(driver, "http://demo-magento2.vuestorefront.io/customer/account/create/");

@@ -1,9 +1,6 @@
 package webDriverSessionGenerator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class webDriverSessionGenerator {
 
@@ -12,10 +9,11 @@ public class webDriverSessionGenerator {
     }
 
     public static WebDriver getSession(String browser){
+        //instantiate driver with null by default
         WebDriver driver = null;
         if (browser == "CHROME") {
             driver = new ChromeDriver();
-            System.out.println(System.getProperty("os.name"));
+//            System.out.println(System.getProperty("os.name"));
             if (System.getProperty("os.name").toLowerCase().contains("mac") == false)
             {
                 System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
